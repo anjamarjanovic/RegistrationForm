@@ -1,0 +1,19 @@
+@import 'src/assets/styles/_var.scss';
+
+
+@mixin main {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: $font-family-main;
+      color: $color-text-dark;
+    }
+  }
+
+  @mixin sm() {
+    @media only screen and (max-width: 568px) {
+      @content;
+    }
+  }
+  

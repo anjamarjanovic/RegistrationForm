@@ -1,0 +1,52 @@
+<form class="form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <h1>Register</h1>
+  <div class="control" *ngFor="let control of formControls">
+    <label *ngIf="control.label !== ''">
+      {{ control.label }}
+    </label>
+
+    <input
+      *ngIf="AVAILABLE_INPUT_TYPES.includes(control.type)"
+      [type]="control.type"
+      [formControlName]="control.name"
+      [value]="control.value"
+    />
+    <textarea
+      *ngIf="control.type === 'textarea'"
+      [formControlName]="control.name"
+      [value]="control.value"
+    ></textarea>
+
+    <div *ngIf="control.type === 'radio'">
+      <label style="margin-right: 10px" *ngFor="let val of control.options">
+        <input
+          style="width: auto; margin-bottom: 10px; margin-left: 10px"
+          *ngIf="control.type === 'radio'"
+          name="{{ control.name }}"
+          type="radio"
+          [formControlName]="control.name"
+          value="{{ val.value }}"
+        />
+        {{ val.key }}</label
+      >
+    </div>
+
+    <input
+      *ngIf="control.type === 'checkbox'"
+      style="width: auto"
+      type="checkbox"
+      [formControlName]="control.name"
+      [checked]="control.value"
+    />
+
+    <select *ngIf="control.type === 'select'" [formControlName]="control.name">
+      <option value="-1" disabled>Select</option>
+      <option *ngFor="let val of control.value.split(',')" value="{{ val }}">
+        {{ val }}
+      </option>
+    </select>
+  </div>
+  <button class="btn" [disabled]="registrationForm.invalid" type="submit">
+    Register Now
+  </button>
+</form>

@@ -1,0 +1,52 @@
+{
+  "controls": [
+    {
+      "name": "firstName",
+      "label": "First Name:",
+      "value": "",
+      "type": "text",
+      "validators": {
+        "required": true,
+        "minLength": 1
+      }
+    },
+    {
+      "name": "lastName",
+      "label": "Last Name:",
+      "value": "",
+      "type": "text",
+      "validators": {
+        "required": true,
+        "minLength": 1
+      }
+    },
+    {
+      "name": "gender",
+      "label": "Gender:",
+      "type": "radio",
+      "options": [
+        { "key": "Male", "value": "m" },
+        { "key": "Female", "value": "f" }
+      ],
+      "validators": {
+        "required": true
+      }
+    },
+    {
+      "name": "date",
+      "label": "Date Of Birth:",
+      "value": "",
+      "type": "date",
+      "validators": {
+        "required": true
+      }
+    },
+    {
+      "name": "newsletter",
+      "label": "I would like to subscribe to Newsletter ",
+      "type": "checkbox",
+      "value": true,
+      "validators": {}
+    }
+  ]
+}

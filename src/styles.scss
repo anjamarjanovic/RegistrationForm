@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'src/assets/styles/_mixin.scss';
+
+@include main;
+
+ body{
+     background: linear-gradient(to bottom right,#27c6da, #5b6cc0);
+     background-attachment: fixed;
+
+ }
